@@ -50,7 +50,7 @@
     <a class="btn primary" href="https://github.com/jev-chat/jev-chat-jarvis/raw/main/apk/jev-assistant-v1.2-release.apk">下载 Android 安装包（v1.2，9.8 MB）</a>
     <a class="btn" href="https://github.com/jev-chat/jev-chat-jarvis">GitHub 源码与说明</a>
   </div>
-  <p class="note">Android 8.0 以上。安装后按 README 开启无障碍服务并填入模型接口密钥即可使用。</p>
+  <p class="note">Android 11 以上。安装后按 README 开启无障碍服务并填入模型接口密钥即可使用。</p>
   <div class="shots">
     <figure style="margin:0"><img src="https://raw.githubusercontent.com/jev-chat/jev-chat-jarvis/main/docs/images/overlay.png" alt="悬浮窗：聊天上方的 Jev 分析面板"><figcaption>悬浮窗：危险等级、对方意图、3 条候选回复</figcaption></figure>
     <figure style="margin:0"><img src="https://raw.githubusercontent.com/jev-chat/jev-chat-jarvis/main/docs/images/settings.png" alt="设置页"><figcaption>设置页：接口、知识库、联系人</figcaption></figure>
@@ -63,8 +63,8 @@
     <div class="card"><h3>看得懂，不止会写</h3><p>用判断模型一次给出：对方真实意图、危险等级、该不该马上回、最佳动作。约 1 秒，带把握度。</p></div>
     <div class="card"><h3>3 条候选，排好序</h3><p>生成模型起草 3 条口语化回复，按「最合适」排序，复制或一键填入输入框。</p></div>
     <div class="card"><h3>发送永远由你点</h3><p>只填入、不发送，不碰转账、红包、收款。发不发、改不改，最后一步在你手里。</p></div>
-    <div class="card"><h3>非侵入</h3><p>不 hook、不改包、不走任何 App 的接口或账号，只用系统无障碍服务读屏幕上正在显示的对话；读不到就本地 OCR。</p></div>
-    <div class="card"><h3>知识库与上下文</h3><p>本地维护笔记和联系人档案，分析时自动带上命中的知识和这个人的历史，候选回复与你的设定一致。</p></div>
+    <div class="card"><h3>非侵入</h3><p>不 hook、不改包、不走任何 App 的接口或账号，只用系统无障碍服务读屏幕上正在显示的对话。</p></div>
+    <div class="card"><h3>知识库与上下文（v1.3 开发中）</h3><p>本地维护笔记和联系人档案，分析时自动带上命中的知识和这个人的历史，候选回复与你的设定一致。</p></div>
     <div class="card"><h3>隐私在本机</h3><p>密钥只存 App 私有空间，聊天内容只在分析那一刻发给你自己配置的模型接口，不落盘、不进日志。</p></div>
   </div>
 </section>
@@ -76,7 +76,7 @@
     <tr><td>微信</td><td>真机验证</td><td>无障碍读屏</td></tr>
     <tr><td>QQ</td><td>真机验证</td><td>无障碍读屏</td></tr>
     <tr><td>X（Twitter 私信）</td><td>真机验证</td><td>无障碍读屏</td></tr>
-    <tr><td>飞书</td><td>已接入</td><td>截屏 + 本地 OCR</td></tr>
+    <tr><td>飞书</td><td>部分</td><td>标题 / 气泡位置可读，正文待截屏 + OCR（v1.3）</td></tr>
   </table>
   <p class="note">新增一个 App 只需实现一个几十行的适配器，其余全部复用。欢迎提 PR。</p>
 </section>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jev 聊天助手 · 装在手机上的对话副驾</title>
+<meta name="description" content="Jev 聊天助手：在微信 / QQ / X / 飞书里读懂对方、给出候选回复、一键填入输入框，发不发由你。非侵入，只读屏幕，开源 MIT。">
+<meta property="og:title" content="Jev 聊天助手 · 装在手机上的对话副驾">
+<meta property="og:description" content="在微信 / QQ / X / 飞书里读懂对方、给出候选回复、一键填入输入框，发不发由你。">
+<meta property="og:image" content="https://raw.githubusercontent.com/jev-chat/jev-chat-jarvis/main/docs/images/overlay.png">
+<style>
+  :root { --bg:#fff; --fg:#1f2328; --muted:#59636e; --line:#d1d9e0; --card:#f6f8fa; --accent:#1f883d; --accent-fg:#fff; --link:#0969da; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --line:#30363d; --card:#161b22; --accent:#238636; --link:#4493f8; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; }
+  a { color:var(--link); text-decoration:none; } a:hover { text-decoration:underline; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 20px; }
+  header { padding:64px 0 32px; }
+  h1 { font-size:2.4rem; line-height:1.2; margin:0 0 12px; }
+  .lead { font-size:1.15rem; color:var(--muted); max-width:640px; margin:0 0 24px; }
+  .btns { display:flex; flex-wrap:wrap; gap:12px; }
+  .btn { display:inline-block; padding:12px 20px; border-radius:8px; border:1px solid var(--line); background:var(--card); color:var(--fg); font-weight:600; }
+  .btn.primary { background:var(--accent); border-color:var(--accent); color:var(--accent-fg); }
+  .btn:hover { text-decoration:none; filter:brightness(1.05); }
+  .note { font-size:.9rem; color:var(--muted); margin-top:10px; }
+  .shots { display:flex; gap:20px; flex-wrap:wrap; justify-content:center; margin:24px 0 8px; }
+  .shots img { width:280px; max-width:100%; border:1px solid var(--line); border-radius:12px; }
+  .shots figcaption { font-size:.85rem; color:var(--muted); text-align:center; margin-top:6px; }
+  section { padding:32px 0; border-top:1px solid var(--line); }
+  h2 { font-size:1.4rem; margin:0 0 16px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:18px; }
+  .card h3 { margin:0 0 8px; font-size:1.05rem; }
+  .card p { margin:0; color:var(--muted); font-size:.95rem; }
+  table { border-collapse:collapse; width:100%; }
+  th, td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); }
+  th { color:var(--muted); font-weight:600; font-size:.9rem; }
+  .qr { display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
+  .qr img { width:160px; border:1px solid var(--line); border-radius:8px; }
+  footer { padding:32px 0 48px; border-top:1px solid var(--line); color:var(--muted); font-size:.9rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Jev 聊天助手</h1>
+  <p class="lead"><strong>装在手机上的对话副驾。</strong>你在任何聊天 App 里聊天，它在旁边读懂对方、告诉你该怎么回，一键填进输入框，发不发由你。</p>
+  <div class="btns">
+    <a class="btn primary" href="https://github.com/jev-chat/jev-chat-jarvis/raw/main/apk/jev-assistant-v1.2-release.apk">下载 Android 安装包（v1.2，9.8 MB）</a>
+    <a class="btn" href="https://github.com/jev-chat/jev-chat-jarvis">GitHub 源码与说明</a>
+  </div>
+  <p class="note">Android 8.0 以上。安装后按 README 开启无障碍服务并填入模型接口密钥即可使用。</p>
+  <div class="shots">
+    <figure style="margin:0"><img src="https://raw.githubusercontent.com/jev-chat/jev-chat-jarvis/main/docs/images/overlay.png" alt="悬浮窗：聊天上方的 Jev 分析面板"><figcaption>悬浮窗：危险等级、对方意图、3 条候选回复</figcaption></figure>
+    <figure style="margin:0"><img src="https://raw.githubusercontent.com/jev-chat/jev-chat-jarvis/main/docs/images/settings.png" alt="设置页"><figcaption>设置页：接口、知识库、联系人</figcaption></figure>
+  </div>
+</header>
+
+<section>
+  <h2>它做什么</h2>
+  <div class="grid">
+    <div class="card"><h3>看得懂，不止会写</h3><p>用判断模型一次给出：对方真实意图、危险等级、该不该马上回、最佳动作。约 1 秒，带把握度。</p></div>
+    <div class="card"><h3>3 条候选，排好序</h3><p>生成模型起草 3 条口语化回复，按「最合适」排序，复制或一键填入输入框。</p></div>
+    <div class="card"><h3>发送永远由你点</h3><p>只填入、不发送，不碰转账、红包、收款。发不发、改不改，最后一步在你手里。</p></div>
+    <div class="card"><h3>非侵入</h3><p>不 hook、不改包、不走任何 App 的接口或账号，只用系统无障碍服务读屏幕上正在显示的对话；读不到就本地 OCR。</p></div>
+    <div class="card"><h3>知识库与上下文</h3><p>本地维护笔记和联系人档案，分析时自动带上命中的知识和这个人的历史，候选回复与你的设定一致。</p></div>
+    <div class="card"><h3>隐私在本机</h3><p>密钥只存 App 私有空间，聊天内容只在分析那一刻发给你自己配置的模型接口，不落盘、不进日志。</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>支持的聊天 App</h2>
+  <table>
+    <tr><th>平台</th><th>状态</th><th>采集方式</th></tr>
+    <tr><td>微信</td><td>真机验证</td><td>无障碍读屏</td></tr>
+    <tr><td>QQ</td><td>真机验证</td><td>无障碍读屏</td></tr>
+    <tr><td>X（Twitter 私信）</td><td>真机验证</td><td>无障碍读屏</td></tr>
+    <tr><td>飞书</td><td>已接入</td><td>截屏 + 本地 OCR</td></tr>
+  </table>
+  <p class="note">新增一个 App 只需实现一个几十行的适配器，其余全部复用。欢迎提 PR。</p>
+</section>
+
+<section>
+  <h2>姊妹项目</h2>
+  <div class="grid">
+    <div class="card"><h3><a href="https://github.com/Snowwit88/wechat-ink">微墨 WeChat Ink</a></h3><p>微信公众号写作、配图与排版助手，支持资料核验、学术风图文和草稿发布。</p></div>
+    <div class="card"><h3><a href="https://github.com/jev-chat">jev-chat 组织</a></h3><p>几个做 AI 工具的朋友把项目放在一起，方便互相找到。</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>联系 / 反馈 / 合作</h2>
+  <div class="qr">
+    <img src="https://raw.githubusercontent.com/jev-chat/jev-chat-jarvis/main/docs/images/wechat-mp.png" alt="公众号二维码">
+    <div>
+      <p style="margin:0 0 8px">合作、反馈、进群、二维码过期，都走<strong>公众号私信</strong>，其它渠道不一定看得到。</p>
+      <p style="margin:0" class="note">交流群二维码见 <a href="https://github.com/jev-chat/jev-chat-jarvis#交流群--需求收集">GitHub README 底部</a>（7 天有效，过期了公众号私信要新码）。</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  仅供个人学习与研究使用，只处理你自己设备上、你自己有权查看的聊天。请遵守各软件的许可协议与当地法律法规。代码以 <a href="https://github.com/jev-chat/jev-chat-jarvis/blob/main/LICENSE">MIT</a> 协议开源。
+</footer>
+
+</div>
+</body>
+</html>

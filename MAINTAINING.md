@@ -12,7 +12,7 @@ chatjevs.com 是纯静态站：GitHub Pages 从 `jev-chat/jev-chat.github.io` �
 | `style.css` | 样式。设计令牌在文件开头，浅色 / 深色两套；隐私页样式在文件末尾 |
 | `privacy.html` | 隐私政策。**只有中文**，不走字典；页底有英文摘要 `#en-summary` |
 | `tools/check-i18n.mjs` | 中英文案检查；`--fix` 把中文从字典写进 `index.html` |
-| `assets/` | `favicon.svg`、`apple-touch-icon.png`、`og.png`（1200×630）、`mp-qr.webp`（公众号二维码）；`overlay.webp`、`settings.webp` 是旧版截图，页面已不引用（见 DESIGN.md 决策 1） |
+| `assets/` | `favicon.svg`、`apple-touch-icon.png`、`og.png`（1200×630）、`mp-qr.webp`（公众号二维码）（旧版截图 `overlay.webp`、`settings.webp` 已删除，见 DESIGN.md 决策 1） |
 | `download/` | 站内 APK。**文件名不要改**，App、README、外部文章可能直链 |
 | `CNAME`、`.nojekyll` | 域名 chatjevs.com 和关闭 Jekyll，**不要删** |
 | `DESIGN.md` | 设计说明：信息架构、视觉语言、为什么这么做、旧版内容去向 |

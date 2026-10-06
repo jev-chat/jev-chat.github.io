@@ -1,6 +1,6 @@
 # 维护说明
 
-chatjevs.com 是纯静态站：GitHub Pages 从 `jev-chat/jev-chat.github.io` 的 `main` 分支根目录直出，没有框架，发布时无需构建；维护时需生成英文页和发现文件（见下文）。合并到 `main` 就是上线。同一套页面另有两份拷贝（`jev-chat-jarvis` 仓库的 `site/` 目录和 `gh-pages` 分支），改完这里要同步过去。
+chatjevs.com 是纯静态站：GitHub Pages 从 `jev-chat/jev-chat.github.io` 的 `main` 分支根目录直出，没有框架，发布时无需构建；维护时需生成英文页和发现文件（见下文）。合并到 `main` 就是上线。`jev-chat-jarvis` 仓库的 `site/` 目录已于 2026-10-06 删除，官网只在这里维护；该仓库的 `gh-pages` 分支还有一份旧拷贝。
 
 ## 文件一览
 
